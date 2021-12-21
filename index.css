@@ -9,7 +9,7 @@ div#content{
     width: 90%;
     display:grid;
     grid-template-columns: 1fr 1fr ;
-    grid-template-rows: 0.8fr 1fr;
+    grid-template-rows: 0.8fr 0.1fr;
 }
 
 header{
@@ -118,13 +118,21 @@ div#header_color #search-button{
 
 }
 
+
 @media only screen and (max-width: 1000px) {
+    main{
+    display: grid;
+    width: 100%;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column: 1/ span 3;
+    grid-template-columns:repeat(4,1fr)
+}
     div#content{
-        margin:0 auto;
+        margin:auto;
         width: 90%;
         display:grid;
         grid-template-columns: 1fr 1fr ;
-        grid-template-rows: 0.8fr 1fr 1fr;
+        grid-template-rows: 0.8fr 0.1fr 0fr;
     }
     header{
         width: 100%;
@@ -242,8 +250,11 @@ div.tab_link:hover {
 
 #part2 img{
     width: 100%;
-    height: fit-content;
-    clip-path:inset(7% 0% 0% 0%);
+    height:fit-content;
+    margin:0;
+    padding:0;
+    clip-path:inset(0% 0% 0% 0%);
+    margin-top:-0.2em;
 }
 
 @media only screen and (max-width: 1650px) {
@@ -267,6 +278,14 @@ div.tab_link:hover {
     #part1 img{
         margin-top:-2em;
     }
+  #part2 img{
+    width: 100%;
+    height:fit-content;
+    margin:0;
+    padding:0;
+    clip-path:inset(0% 0% 0% 0%);
+    margin-top:0em;
+}
 }
 
 @media only screen and (max-width: 1260px) {
@@ -275,6 +294,14 @@ div.tab_link:hover {
     #part1 img{
         margin-top:-1.2em;
     }
+    #part2 img{
+    width: 100%;
+    height:fit-content;
+    margin:0;
+    padding:0;
+    clip-path:inset(0% 0% 0% 0%);
+    margin-top:0.85em;
+}
 }
 
 @media only screen and (max-width: 1170px) {
@@ -282,6 +309,14 @@ div.tab_link:hover {
     #part1 img{
         margin-top:-1em;
     }
+      #part2 img{
+    width: 100%;
+    height:fit-content;
+    margin:0;
+    padding:0;
+    clip-path:inset(0% 0% 0% 0%);
+    margin-top:1em;
+}
 }
 
 @media only screen and (max-width: 1150px) {
@@ -289,6 +324,14 @@ div.tab_link:hover {
     clip-path:inset(2% 0% 0% 0%);
     margin-top:-0.5em;
     }
+        #part2 img{
+    width: 100%;
+    height:fit-content;
+    margin:0;
+    padding:0;
+    clip-path:inset(0% 0% 0% 0%);
+    margin-top:0.80em;
+}
 }
 
 @media only screen and (max-width: 1020px) {
@@ -319,10 +362,7 @@ div#header_middle{
     text-align: center;
     align-items:flex-start;
     font-size: x-large;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-    background-color: #6b06044d;
-    
+   
 }
 div#header_middle a{
     display: block;
@@ -341,6 +381,15 @@ div#header_middle div:nth-child(3) img{
 div#header_middle div:hover{
    border: 0.5rem solid #A3320B ;
 }
+        #part2 img{
+    width: 100%;
+    height:fit-content;
+    margin:0;
+    padding:0;
+    clip-path: inset(2% 2% 0% 2%);
+    margin-top: -0.4em;
+}
+
 
 @media only screen and (max-width: 600px) {
     div#header_middle {
@@ -352,6 +401,16 @@ div#header_middle div:hover{
         margin-top: 1rem;
         margin-bottom: 3rem;
     }
+  .tab_link{
+    display:none;
+  }
+  main{
+    display: grid;
+    width: 100%;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column: 1/ span 3;
+    grid-template-columns:repeat(4,1fr)
+}
 }
 
 @media only screen and (max-width: 1000px) {
@@ -361,17 +420,25 @@ div#header_middle div:hover{
         grid-template-columns: 1fr;
         grid-column: 1/3;
         font-size: x-large;
-        margin-top: 1rem;
-        margin-bottom: 3rem;
     }
 }
 
 
 main{
-    width: 100%;
     display: grid;
+    width: 100%;
     grid-template-columns: 1fr 1fr 1fr;
     grid-column: 1/ span 3;
+   margin-bottom:1em;
+}
+@media only screen and (max-width:1000px){
+    main{
+    display: grid;
+    width: 100%;
+    grid-column: 1/ span 3;
+    grid-template-columns:repeat(4,1fr);
+      grid-template-rows:repeat(4,1fr)
+}
 }
 
 div#column_left_bar{
@@ -429,7 +496,8 @@ section#news div{
 }
 
 section#news div:nth-child(2){
-    background-image: url(index/covid19.jpg); 
+    grid-row:2/3;
+    background-image: url(https://cdn.glitch.me/efcaff9f-dd99-4b95-8d18-e8478ee868c9%2Fcovid19.jpg?v=1634573361526); 
     background-position: center;
     background-size: 100%;
     background-repeat: no-repeat;
@@ -437,14 +505,16 @@ section#news div:nth-child(2){
 }
 
 section#news div:nth-child(3){
-    background-image: url(index/workHome.jpg);
+    grid-row-start:3;
+    background-image: url(https://cdn.glitch.me/efcaff9f-dd99-4b95-8d18-e8478ee868c9%2FworkHome.jpg?v=1634573362291);
     background-position: center;
     background-size:contain;
     background-repeat: no-repeat;
 }
 
 section#news div:nth-child(4){
-    background-image: url(index/mask.jpg);
+    grid-row:3/4;
+    background-image: url(https://cdn.glitch.me/efcaff9f-dd99-4b95-8d18-e8478ee868c9%2Fmask.jpg?v=1634573363481);
     background-position: center;
     background-size: 100%;
     background-repeat: no-repeat;
@@ -452,7 +522,7 @@ section#news div:nth-child(4){
 }
 
 section#news div:nth-child(5){
-    background-image: url(index/Sheet_Music.jpg);
+    background-image: url(https://cdn.glitch.me/efcaff9f-dd99-4b95-8d18-e8478ee868c9%2FSheet_Music.jpg?v=1634573362139);
     background-position: center;
     background-size: fill;
     background-repeat: no-repeat; 
@@ -507,8 +577,8 @@ section#news div:nth-child(5){
 }
 @media only screen and (max-width: 1100px) {
     div#column_left_bar{
-        margin: auto;
-        grid-column: 1/4;   
+        grid-column:1/5;
+        margin:0 auto;  
         border-bottom: 0.8em solid #A3320B;
         border-top: 0.8em solid #A3320B;
         background-color: #a3310b69;
@@ -526,7 +596,7 @@ section#news div:nth-child(5){
 
     section{
         display: inline;
-        grid-column: 1/4;
+        grid-column: 1/5;
         gap: 0em;
         grid-template-columns:1fr;
         grid-template-rows: 1fr 1fr 1fr;
@@ -556,7 +626,7 @@ section#news div:nth-child(5){
 footer{
     grid-row-start: 3;
     grid-column:1/4;
-    margin-top: 3em;
+   
 }
 
 div#Information{
